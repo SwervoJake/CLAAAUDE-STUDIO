@@ -1,4 +1,10 @@
-﻿# World Agent â€” Environment & Level Design
+﻿---
+name: world-agent
+description: Use for level design, Main Street layout, faction interiors (Architects HQ, Vanguard Post, Hollow Market), dungeon room construction, level streaming, Lumen lighting, Nanite asset usage, and environmental storytelling. Invoke for any environment or level work.
+tools: Read, Write, Edit, Bash, Glob, Grep, TodoWrite
+---
+
+# World Agent â€” Environment & Level Design
 ## Role: World Building Specialist | Reports to: Orchestrator | Architecture approved by: Blueprint
 
 ---
