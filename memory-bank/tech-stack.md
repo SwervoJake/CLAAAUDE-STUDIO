@@ -31,6 +31,47 @@
 
 ---
 
+## Target Hardware Spec (Minimum)
+
+**Status: LOCKED — M0**
+
+| Component | Minimum |
+|-----------|---------|
+| GPU | NVIDIA GTX 1660 / AMD RX 5600 XT |
+| CPU | Intel i5-8400 / AMD Ryzen 5 3600 |
+| RAM | 16GB |
+| Storage | SSD recommended, 20GB free |
+| OS | Windows 10 64-bit |
+| DirectX | 12 (Shader Model 6 — already configured in engine) |
+
+---
+
+## Asset Naming Conventions
+
+**Status: LOCKED — M0**
+Apply to all new ManyMoons-specific assets. Existing template assets (BP_FirstPersonCharacter, etc.) are exempt — do not rename assets that may break existing Blueprint references.
+
+| Asset Type | Prefix | Example |
+|-----------|--------|---------|
+| Static Mesh | SM_ | SM_WallSection_01 |
+| Skeletal Mesh | SK_ | SK_NPCVendor |
+| Blueprint Actor | BP_ | BP_NPCBase |
+| Blueprint Component | BPC_ | BPC_ReputationTracker |
+| Blueprint Interface | BPI_ | BPI_Interactable |
+| Material | M_ | M_WallConcrete |
+| Material Instance | MI_ | MI_WallConcrete_Worn |
+| Texture (diffuse) | T_Name_D | T_WallConcrete_D |
+| Texture (normal) | T_Name_N | T_WallConcrete_N |
+| Texture (roughness/metallic) | T_Name_R | T_WallConcrete_R |
+| Map/Level | L_ | L_Hub_MainStreet |
+| Widget Blueprint | WBP_ | WBP_HUD |
+| Animation Blueprint | ABP_ | ABP_NPC_Idle |
+| Animation Sequence | A_Char_Action | A_Player_Jump |
+| Data Table | DT_ | DT_NPCDialogue |
+| Enum | E_ | EFaction, EReputationTier |
+
+---
+
 ## Architecture Decisions (ADR Log)
 
 ### ADR-001: Single-player only (v1)
@@ -53,21 +94,12 @@
 **Rationale:** Blueprint iteration speed is faster during early milestones. Premature C++ optimization is a scope risk.
 **Review date:** M1 complete.
 
----
+### ADR-005: Save System — USaveGame
+**Decision:** Use Unreal Engine's built-in `USaveGame` class.
+**Rationale:** No external dependencies. Handles all v1 state (reputation tracks per faction, inventory contents, player last position in hub). Trivially extensible at M2 when save slots and more complex state are needed. Avoids reinventing serialization infrastructure.
+**Review date:** M2 implementation.
 
-## Target Hardware Spec (Minimum)
-
-To be defined by Systems Agent at M0. Starting reference point:
-- GPU: NVIDIA GTX 1660 / AMD RX 5600 XT
-- RAM: 16GB
-- Storage: 20GB (estimated)
-- OS: Windows 10 64-bit
-
----
-
-## Decisions Pending (M0 Tasks)
-
-- [ ] Define minimum hardware spec formally
-- [ ] Choose save system approach (Unreal SaveGame class vs custom)
-- [ ] Define asset naming conventions
-- [ ] Confirm Blueprint communication pattern (Event Dispatchers vs Interfaces)
+### ADR-006: Blueprint Communication Pattern
+**Decision:** Blueprint Interfaces (BPI) as the primary inter-actor communication pattern. Event Dispatchers reserved for one-to-many UI/HUD broadcasts.
+**Rationale:** Interfaces allow loose coupling — any actor implementing `BPI_Interactable` can be called by the player without the player holding a typed reference. This is essential for the hub's varied interactive objects (NPCs, doors, faction boards). Event Dispatchers are appropriate for reputation-change-to-HUD or inventory-update-to-HUD patterns where a single source notifies many listeners. Note: this pattern is already partially validated — `BPI_TouchInterface` exists in the template confirming the engine and team lean toward interfaces.
+**Review date:** M1 complete.
