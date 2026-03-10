@@ -24,6 +24,7 @@ Active integrations:
 
 - **Slack** — `#claaaude-studio` (C0AKGFLLJ6A) via Slack MCP. Blueprint sends escalations, milestone gates, and ADR locks here.
 - **Session hooks** — `.claude/settings.json` defines `SessionStart`, `Notification`, and `Stop` hooks. `scripts/notify-slack.sh` handles webhook-based notifications.
+- **Vault v.1 (Supabase)** — `wofvwgvaoqwcfgleirne` (`us-west-2`). Research knowledge base. Orchestrator queries `research_entries` to inject domain context into task prompts before dispatch. Migration path: Qdrant vector search once `qdrant_synced` entries are available.
 
 ---
 
