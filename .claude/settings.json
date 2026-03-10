@@ -16,7 +16,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/home/user/CLAAAUDE-STUDIO/scripts/notify-slack.sh notification 'Blueprint needs your attention' 'An agent is waiting for your input or approval. Check your Claude Code session.'"
+            "command": "$CLAUDE_PROJECT_DIR/scripts/notify-slack.sh notification 'Blueprint needs your attention' 'An agent is waiting for your input or approval. Check your Claude Code session.'"
           }
         ]
       }
@@ -27,7 +27,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/home/user/CLAAAUDE-STUDIO/scripts/notify-slack.sh stop 'Session ended' 'A Claude Code agent session has completed. Review progress.md for current status.'"
+            "command": "$CLAUDE_PROJECT_DIR/scripts/notify-slack.sh stop 'Session ended' 'A Claude Code agent session has completed. Review progress.md for current status.'"
           }
         ]
       }
