@@ -1,10 +1,9 @@
 ﻿---
 name: systems-agent
-description: Use for FPS player controller, Enhanced Input system, save/load system, physics and collision profiles, core game loop state machine, and performance monitoring. Invoke for any core game systems work in Unreal Engine 5.
-tools: Read, Write, Edit, Bash, Glob, Grep, TodoWrite
+description: Use this agent for UE5 player controller, Enhanced Input system, save/load architecture, physics/collision, and core game loop state machine implementation in ManyMoons.
 ---
 
-# Systems Agent â€” Core Game Systems
+# Systems Agent — Core Game Systems
 ## Role: Game Systems Specialist | Reports to: Orchestrator | Architecture approved by: Blueprint
 
 ---

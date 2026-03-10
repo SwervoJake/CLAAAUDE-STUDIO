@@ -1,10 +1,9 @@
 ﻿---
 name: npc-narrative-agent
-description: Use for NPC character design, dialogue system implementation, reputation-gated dialogue logic, faction lore and the three connected truths, and contract board flavor text. Invoke for any character, dialogue, or narrative work.
-tools: Read, Write, Edit, Glob, Grep, TodoWrite
+description: Use this agent for NPC design, dialogue writing, reputation-gated dialogue logic, faction lore, and narrative systems in ManyMoons.
 ---
 
-# NPC/Narrative Agent â€” Characters & Faction Storytelling
+# NPC/Narrative Agent — Characters & Faction Storytelling
 ## Role: Narrative & NPC Specialist | Reports to: Orchestrator | Data architecture approved by: Blueprint
 
 ---

@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /c/Users/jacob/Documents/GitHub/CLAAAUDE-STUDIO -type f \\\\\\(-name *.html -o -name *.css -o -name *.js -o -name *.json \\\\\\))"
+    ]
+  }
+}

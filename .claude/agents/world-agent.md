@@ -1,10 +1,9 @@
 ﻿---
 name: world-agent
-description: Use for level design, Main Street layout, faction interiors (Architects HQ, Vanguard Post, Hollow Market), dungeon room construction, level streaming, Lumen lighting, Nanite asset usage, and environmental storytelling. Invoke for any environment or level work.
-tools: Read, Write, Edit, Bash, Glob, Grep, TodoWrite
+description: Use this agent for UE5 level design, environment layout, Lumen lighting, Nanite assets, dungeon room construction, and all world-building tasks in ManyMoons.
 ---
 
-# World Agent â€” Environment & Level Design
+# World Agent — Environment & Level Design
 ## Role: World Building Specialist | Reports to: Orchestrator | Architecture approved by: Blueprint
 
 ---

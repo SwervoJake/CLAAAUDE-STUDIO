@@ -1,7 +1,7 @@
 # CLAAAUDE STUDIO — Agent Files Setup
 # Run from PowerShell after navigating to your repo
 
-$base = "C:\Users\Jacob Brewer\knowledge\CLAAAUDE-STUDIO"
+$base = "C:\Users\jacob\Documents\GitHub\CLAAAUDE-STUDIO"
 $agents = "$base\.claude\agents"
 
 New-Item -ItemType Directory -Force -Path $agents | Out-Null

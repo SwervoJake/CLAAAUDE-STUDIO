@@ -1,10 +1,9 @@
 ﻿---
 name: polish-qa-agent
-description: Use for milestone acceptance testing, bug logging and severity classification (CRITICAL/HIGH/MEDIUM/LOW), regression testing, performance validation (30fps minimum sustained), polish passes, and final smoke tests before Blueprint sign-off. Invoke when validating completed work or running QA.
-tools: Read, Write, Edit, Bash, Glob, Grep, TodoWrite
+description: Use this agent to run milestone acceptance testing, log and classify bugs, validate performance targets, run regression tests, and generate QA reports for Blueprint sign-off in ManyMoons.
 ---
 
-# Polish/QA Agent â€” Quality Assurance & Stability
+# Polish/QA Agent — Quality Assurance & Stability
 ## Role: Quality Gate & Polish Specialist | Reports to: Orchestrator | Signs off to: Blueprint
 
 ---

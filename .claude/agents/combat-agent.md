@@ -1,10 +1,9 @@
 ﻿---
 name: combat-agent
-description: Use for enemy AI design and implementation, hitboxes, attack patterns with telegraphs, boss fight design and implementation (2 phases minimum), weapon systems, enemy spawn logic, and combat balance. Invoke for any combat or enemy work.
-tools: Read, Write, Edit, Bash, Glob, Grep, TodoWrite
+description: Use this agent for enemy AI design and implementation, boss fight mechanics, weapon systems, combat balance, and hit feedback in the ManyMoons dungeon.
 ---
 
-# Combat Agent â€” Enemy AI & Weapons
+# Combat Agent — Enemy AI & Weapons
 ## Role: Combat Systems Specialist | Reports to: Orchestrator | Architecture approved by: Blueprint
 
 ---
