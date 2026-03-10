@@ -3,6 +3,44 @@
 
 ---
 
+## Project Overview
+
+This is a UE5 (Unreal Engine 5) project. When making changes, be aware of UE5 project structure conventions and build systems. Key locations:
+
+- `ManyMoons/` — UE5 project root (`.uproject`, `Content/`, `Config/`)
+- `ManyMoons/Content/` — all game assets (Blueprints, maps, meshes, animations)
+- `ManyMoons/Config/` — engine and input configuration (`.ini` files)
+- `memory-bank/` — agent briefing room, read before every task
+
+UE5 binary assets (`.uasset`, `.umap`) are tracked via Git LFS. Always run `git lfs pull` after cloning.
+
+---
+
+## Integration & DevOps
+
+When setting up integrations (Slack, webhooks, etc.), always verify the connection works by sending a test message or ping before considering the task complete. Do not mark an integration task done until a real signal has been observed end-to-end.
+
+Active integrations:
+
+- **Slack** — `#claaaude-studio` (C0AKGFLLJ6A) via Slack MCP. Blueprint sends escalations, milestone gates, and ADR locks here.
+- **Session hooks** — `.claude/settings.json` defines `SessionStart`, `Notification`, and `Stop` hooks. `scripts/notify-slack.sh` handles webhook-based notifications.
+
+---
+
+## Workflow
+
+Use `TodoWrite` to break down complex tasks into tracked steps before starting implementation. Prefer planning mode for multi-part work — design before you build.
+
+Standard session flow:
+
+1. Read `memory-bank/progress.md` and `memory-bank/tech-stack.md`
+2. Create a todo list for the session's tasks
+3. Work one task at a time, marking complete immediately on finish
+4. Commit at natural milestones, not at the end of the session
+5. Update `memory-bank/progress.md` before the session ends
+
+---
+
 ## What We're Building
 
 An Oasis/SAO-inspired social-first futuristic town hub with dungeon side activity.
