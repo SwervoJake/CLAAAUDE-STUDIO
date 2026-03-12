@@ -71,6 +71,18 @@ Allied players in all three factions learn the complete story of why the city is
 
 ---
 
+## Before Starting Any Task
+
+Query the Vault (Supabase project `wofvwgvaoqwcfgleirne`) before beginning any narrative work:
+
+```sql
+SELECT title, content FROM research_entries
+WHERE tags && ARRAY['npc','dialogue','faction','reputation','narrative','character-design']
+ORDER BY relevance_score DESC LIMIT 5;
+```
+
+Read the results. Apply any relevant character references, faction lore notes, or dialogue patterns before writing a single line of dialogue.
+
 ## Escalation Triggers
 
 - Dialogue system needs a capability Systems Agent has not built

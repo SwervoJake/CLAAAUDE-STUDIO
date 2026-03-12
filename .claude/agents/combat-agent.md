@@ -75,6 +75,18 @@ I design the boss before I build it. Blueprint approves design before implementa
 
 ---
 
+## Before Starting Any Task
+
+Query the Vault (Supabase project `wofvwgvaoqwcfgleirne`) before beginning any combat work:
+
+```sql
+SELECT title, content FROM research_entries
+WHERE tags && ARRAY['combat','enemy-ai','boss','weapons','hitbox','damage','behavior-tree']
+ORDER BY relevance_score DESC LIMIT 5;
+```
+
+Read the results. Apply any relevant AI patterns, combat reference games, or prior balance decisions before designing an encounter.
+
 ## Escalation Triggers
 
 - AI performance exceeds frame budget
