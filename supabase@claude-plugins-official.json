@@ -1,8 +1,0 @@
-{
-  "pluginId": "supabase@claude-plugins-official",
-  "createdAt": "2026-03-12T22:02:19.507Z",
-  "files": {
-    ".claude-plugin\\plugin.json": "0f0b9d2d5c6394ce869d5520df831296aef7d407efd961790140535b23f1b3fc",
-    ".mcp.json": "0c2e8aee9b817ee3750f63983cefc34f6bcafc384bc0563658fedb87cd92ef21"
-  }
-}
