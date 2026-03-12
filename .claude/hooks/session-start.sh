@@ -1,14 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
-# Only run in Claude Code remote sessions
-if [ "${CLAUDE_CODE_REMOTE:-}" != "true" ]; then
-  exit 0
-fi
-
 PROJECT_DIR="${CLAUDE_PROJECT_DIR:-$(git -C "$(dirname "$0")/../.." rev-parse --show-toplevel 2>/dev/null || pwd)}"
 
-echo "[session-start] ManyMoons Studio — initializing remote session"
+echo "[session-start] ManyMoons Studio — initializing session"
 
 # Ensure all scripts are executable
 if [ -d "$PROJECT_DIR/scripts" ]; then
@@ -22,6 +17,7 @@ REQUIRED_FILES=(
   "memory-bank/factions.md"
   "memory-bank/tech-stack.md"
   "memory-bank/milestones.md"
+  "memory-bank/owner.md"
   "CLAUDE.md"
 )
 
@@ -37,6 +33,13 @@ if [ "$MISSING" -eq 0 ]; then
   echo "[session-start] All required memory-bank files present"
 else
   echo "[session-start] $MISSING required file(s) missing — agents may behave incorrectly"
+fi
+
+# Check for pending code reviews Blueprint needs to read
+REVIEWS_FILE="$PROJECT_DIR/memory-bank/reviews.md"
+if [ -f "$REVIEWS_FILE" ] && grep -q "\[PENDING\]" "$REVIEWS_FILE" 2>/dev/null; then
+  PENDING_COUNT=$(grep -c "\[PENDING\]" "$REVIEWS_FILE" 2>/dev/null || echo "0")
+  echo "[session-start] ⚠️  $PENDING_COUNT pending code review(s) in memory-bank/reviews.md — Blueprint should review before starting work"
 fi
 
 echo "[session-start] Done"
