@@ -1,0 +1,34 @@
+{
+  "claude-code-plugins": {
+    "source": {
+      "source": "github",
+      "repo": "anthropics/claude-code"
+    },
+    "installLocation": "C:\\Users\\jacob\\.claude\\plugins\\marketplaces\\claude-code-plugins",
+    "lastUpdated": "2026-03-10T04:42:36.254Z"
+  },
+  "claude-hud": {
+    "source": {
+      "source": "github",
+      "repo": "jarrodwatts/claude-hud"
+    },
+    "installLocation": "C:\\Users\\jacob\\.claude\\plugins\\marketplaces\\claude-hud",
+    "lastUpdated": "2026-03-10T03:49:49.208Z"
+  },
+  "superpowers-dev": {
+    "source": {
+      "source": "git",
+      "url": "https://github.com/obra/superpowers.git"
+    },
+    "installLocation": "C:\\Users\\jacob\\.claude\\plugins\\marketplaces\\superpowers-dev",
+    "lastUpdated": "2026-03-10T03:49:46.421Z"
+  },
+  "claude-plugins-official": {
+    "source": {
+      "source": "github",
+      "repo": "anthropics/claude-plugins-official"
+    },
+    "installLocation": "C:\\Users\\jacob\\.claude\\plugins\\marketplaces\\claude-plugins-official",
+    "lastUpdated": "2026-03-12T22:00:00.299Z"
+  }
+}
