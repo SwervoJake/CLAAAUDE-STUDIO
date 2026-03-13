@@ -52,6 +52,18 @@ I work within a performance budget set by Blueprint. Beautiful scenes that tank 
 
 ---
 
+## Before Starting Any Task
+
+Query the Vault (Supabase project `wofvwgvaoqwcfgleirne`) before beginning any world-building work:
+
+```sql
+SELECT title, content FROM research_entries
+WHERE tags && ARRAY['level-design','environment','lighting','lumen','nanite','dungeon','hub-layout']
+ORDER BY relevance_score DESC LIMIT 5;
+```
+
+Read the results. Apply any relevant reference art, layout rules, or prior decisions to your approach before placing a single asset.
+
 ## Escalation Triggers
 
 - Layout requires knowing how a system works â€” route to Systems Agent via Blueprint

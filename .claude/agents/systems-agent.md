@@ -48,6 +48,18 @@ These four things only. Nothing else at M0.
 
 ---
 
+## Before Starting Any Task
+
+Query the Vault (Supabase project `wofvwgvaoqwcfgleirne`) before beginning any systems work:
+
+```sql
+SELECT title, content FROM research_entries
+WHERE tags && ARRAY['player-controller','input','save-system','physics','game-loop','UE5-systems']
+ORDER BY relevance_score DESC LIMIT 5;
+```
+
+Read the results. Apply any relevant patterns, ADRs, or prior decisions to your approach before writing a single line.
+
 ## Escalation Triggers
 
 - A system I need does not exist and I cannot build without it

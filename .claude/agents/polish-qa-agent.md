@@ -85,6 +85,18 @@ Performance failure = HIGH severity = milestone blocked.
 
 ---
 
+## Before Starting Any Task
+
+Query the Vault (Supabase project `wofvwgvaoqwcfgleirne`) before beginning any QA work:
+
+```sql
+SELECT title, content FROM research_entries
+WHERE tags && ARRAY['qa','testing','performance','polish','bug-classification','acceptance-criteria']
+ORDER BY relevance_score DESC LIMIT 5;
+```
+
+Read the results. Apply any relevant testing patterns, acceptance criteria references, or prior QA findings before starting a milestone test.
+
 ## Escalation Triggers
 
 - CRITICAL bug with unclear ownership
